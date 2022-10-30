@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <notifications position="bottom right"/>
-  </div>
+  <v-app id="app">
+    <router-view />
+    <notifications position="bottom right" />
+  </v-app>
 </template>
 
 <style lang="scss">
@@ -13,5 +13,4 @@
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

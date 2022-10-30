@@ -1,33 +1,7 @@
-/* eslint-disable */
 <template>
-  <v-app id="inspire">
-    <v-app-bar app class="white"  flat>
-      <v-avatar
-        :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
-        size="32"
-      ></v-avatar>
-
-      <v-tabs centered class="ml-n9" color="pink darken-4">
-        <v-tab  class="black--text" v-for="link in links" :key="link">
-          {{ link }}
-        </v-tab>
-      </v-tabs>
-
-       <v-btn
-      @click="go_login"
-      class="mx-2"
-      fab
-      dark
-      color="purple"
-      
-    >
-      <v-icon dark size="35px">
-        mdi-login
-      </v-icon>
-    </v-btn>
-    </v-app-bar>
-
+  <div id="inspire">
     <v-main class="grey lighten-3">
+      <AppBarMain app />
       <!-- Header Container -->
       <v-container fluid class="header">
         <div class="overlay">
@@ -57,13 +31,14 @@
 
           <br />
 
-          <v-container fill-width fluid 
-            class="justify-center container-cards"
-          >
+          <v-container fill-width fluid class="justify-center container-cards">
             <v-row justify="center">
               <div class="justify-center div_card">
                 <v-card class="mx-auto service-card" max-width="380">
-                  <v-img src="../assets/images/card1.png" height="200px"></v-img>
+                  <v-img
+                    src="../assets/images/card1.png"
+                    height="200px"
+                  ></v-img>
 
                   <v-card-title>
                     Detección de emociones en el rostro</v-card-title
@@ -128,7 +103,10 @@
 
               <div class="div_card">
                 <v-card class="mx-auto service-card" max-width="380">
-                  <v-img src="../assets/images/card2.png" height="200px"></v-img>
+                  <v-img
+                    src="../assets/images/card2.png"
+                    height="200px"
+                  ></v-img>
 
                   <v-card-title> Detección de emociones en la voz</v-card-title>
 
@@ -191,7 +169,10 @@
 
               <div class="div_card">
                 <v-card class="mx-auto service-card" max-width="380">
-                  <v-img src="../assets/images/card3.png" height="200px"></v-img>
+                  <v-img
+                    src="../assets/images/card3.png"
+                    height="200px"
+                  ></v-img>
 
                   <v-card-title> Consultas y consejería</v-card-title>
 
@@ -258,7 +239,7 @@
 
       <!-- About Section -->
       <section class="section" id="about">
-        <v-container class="grey lighten-2  container-about">
+        <v-container class="grey lighten-2 container-about">
           <v-row class="row-about">
             <v-col cols="6" md="5" pr="5" mb="4" class="col-about">
               <h6 class="section-title mb-0">Sobre el Centro</h6>
@@ -280,50 +261,71 @@
 
             <v-col cols="6" md="5" pr="5" mb="4" class="col-about">
               <v-row>
-                        <v-col cols="6">
-                            <img src="../assets/images/about2.png" alt="" class="w-100 shadow-sm">
-                        </v-col>
-                        <v-col cols="6">
-                            <img src="../assets/images/about3.png" alt="" class="w-100 shadow-sm">
-                        </v-col>
-                        <v-col cols="12" mt="4">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iusto quidem laborum atque, sapiente ipsa excepturi fuga cum sed in assumenda eos quasi harum culpa laboriosam nulla, incidunt quae. Voluptatum.</p>
-                            <p><b>Aliquid fuga sunt velit, temporibus molestias ab. Ipsa nesciunt totam, aliquid dignissimos.</b><br>
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ut a dolorem, consectetur, eos suscipit consequatur magnam est dolore obcaecati adipisci expedita, vero, iste ducimus qui numquam animi facilis officia?</p>
-                        </v-col>
+                <v-col cols="6">
+                  <img
+                    src="../assets/images/about2.png"
+                    alt=""
+                    class="w-100 shadow-sm"
+                  />
+                </v-col>
+                <v-col cols="6">
+                  <img
+                    src="../assets/images/about3.png"
+                    alt=""
+                    class="w-100 shadow-sm"
+                  />
+                </v-col>
+                <v-col cols="12" mt="4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nemo iusto quidem laborum atque, sapiente ipsa excepturi
+                    fuga cum sed in assumenda eos quasi harum culpa laboriosam
+                    nulla, incidunt quae. Voluptatum.
+                  </p>
+                  <p>
+                    <b
+                      >Aliquid fuga sunt velit, temporibus molestias ab. Ipsa
+                      nesciunt totam, aliquid dignissimos.</b
+                    ><br />
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt ut a dolorem, consectetur, eos suscipit consequatur
+                    magnam est dolore obcaecati adipisci expedita, vero, iste
+                    ducimus qui numquam animi facilis officia?
+                  </p>
+                </v-col>
               </v-row>
             </v-col>
           </v-row>
         </v-container>
       </section>
-
-
-
     </v-main>
-  </v-app>
+  </div>
 </template>
 
 <script>
+import AppBarMain from "../components/layout/AppBarMain.vue";
+
 export default {
+  name: "HomeView",
+  components: {
+    AppBarMain,
+  },
   data: () => ({
-    links: ["Servicios", "Información", "Contacto"],
     show: false,
 
     //To Show More of the Card
     reveal1: false,
     reveal2: false,
     reveal3: false,
-
-
   }),
 
   methods: {
     go_login() {
-      this.$router.push({path: '/login'});
-    }
-  }
-
+      this.$router.push({ path: "/login" });
+    },
+  },
 };
 </script>
 
