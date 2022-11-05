@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home_View from '../views/Home_View.vue'
-import Login_View from '../views/Login_View.vue'
-import SignIn_View from '../views/SignIn_View.vue'
+// Layouts
+import MainLayout from '/src/layouts/MainLayout.vue';
+// Views
+import HomeView from '/src/views/HomeView.vue'
+import LoginView from '/src/views/LoginView.vue'
+import SignInView from '/src/views/SignInView.vue'
+import PatientListView from '/src/views/PatientListView.vue'
+
+import { ROUTES } from './names'
 
 
 Vue.use(VueRouter)
@@ -10,20 +16,30 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home_View
+    component: MainLayout,
+    children: [
+      {
+        path: '',
+        name: ROUTES.HOME,
+        component: HomeView
+      },
+      {
+        path: '/list',
+        name: ROUTES.PATIENT_LIST,
+        component: PatientListView
+      }
+    ]
   },
   {
     path: '/login',
-    name: 'login',
-    component: Login_View
+    name: ROUTES.LOGIN,
+    component: LoginView
   },
   {
     path: '/signin',
     name: 'signin',
-    component: SignIn_View
+    component: SignInView
   },
-
 ]
 
 const router = new VueRouter({

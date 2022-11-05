@@ -1,18 +1,16 @@
 <template>
-  <v-app-bar class="white" flat>
-    <v-tabs centered v-model="tabModel" class="ml-n9" color="pink darken-4">
+  <v-app-bar class="white" fixed>
+    <v-tabs v-model="tabModel" color="primary" centered>
       <v-tab
-        class="black--text"
         v-for="(link, index) in navLinks"
         :key="`app-bar-main-navlink-${index}`"
+        class="black--text text-body-1"
+        @click="$vuetify.goTo(link.to)"
       >
-        {{ link }}
+        {{ link.title }}
       </v-tab>
     </v-tabs>
-
-    <v-btn @click="go_login" class="mx-2" fab dark color="purple">
-      <v-icon dark size="35px"> mdi-login </v-icon>
-    </v-btn>
+    <v-btn class="mx-2 font-weight-bold" color="primary" dark> Entrar </v-btn>
   </v-app-bar>
 </template>
  
@@ -21,7 +19,20 @@ export default {
   name: "AppBarMain",
   data: () => ({
     tabModel: 0,
-    navLinks: ["Servicios", "Información", "Contacto"],
+    navLinks: [
+      {
+        title: "Nuestros Servicios",
+        to: "#service",
+      },
+      {
+        title: "Información del Centro",
+        to: "#about",
+      },
+      {
+        title: "Contáctanos",
+        to: "#contact",
+      },
+    ],
   }),
 };
 </script>
