@@ -104,7 +104,7 @@
 
 <script>
 export default {
-  name: "Login_Page",
+  name: "LoginView",
   data: () => ({
     valid: true,
     password: "",
@@ -182,7 +182,7 @@ h3 {
 }
 
 .login_container {
-  background: url(../assets/images/header3.png) no-repeat center center fixed;
+  background: url("/public/images/header3.png") no-repeat center center fixed;
   background-size: cover;
 }
 .login_form_div {

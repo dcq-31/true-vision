@@ -4,7 +4,7 @@
       <v-container fluid fill-height class="signin_container_back">
         <Personal_Info_Dialog />
         <Specialist_Info_Dialog />
-        <User_Info_Dialog/>
+        <User_Info_Dialog />
       </v-container>
     </v-main>
   </v-app>
@@ -16,13 +16,12 @@ import Specialist_Info_Dialog from "../components/Specialist_Info_Dialog.vue";
 import User_Info_Dialog from "../components/User_Info_Dialog.vue";
 
 export default {
-  name: "SignIn_Page",
+  name: "SignInView",
 
   components: {
     Personal_Info_Dialog,
     Specialist_Info_Dialog,
     User_Info_Dialog,
-
   },
 
   data: function () {},
@@ -54,7 +53,7 @@ h6 {
 }
 
 .signin_container_back {
-  background: url(../assets/images/header3.png) no-repeat center center fixed;
+  background: url("/public/images/header3.png") no-repeat center center fixed;
   background-size: cover;
 }
 </style>
