@@ -1,5 +1,5 @@
 <template>
-  <v-main class="grey lighten-3">
+  <v-main>
     <AppBarMain app />
     <router-view />
     <FooterMain app />
@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppBarMain from "/src/components/layout/AppBarMain";
-import FooterMain from "/src/components/layout/FooterMain";
+import AppBarMain from "/src/components/layout/AppBarMain.vue";
+import FooterMain from "/src/components/layout/FooterMain.vue";
 
 export default {
   name: "MainLayout",
