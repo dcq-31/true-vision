@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify'
 import router from './router'
 // import Notifications from 'vue-notification'
 
-// global CSS
+// CSS
 import '/src/assets/css/global.css';
 
 

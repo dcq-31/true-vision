@@ -3,8 +3,12 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/true-vision/'
-    : '/'
+  /**
+   * When deploy uncommented
+   */
+  /* publicPath: process.env.NODE_ENV === 'production'
+     ? '/true-vision/'
+     : '/'
+   */
 })
 
