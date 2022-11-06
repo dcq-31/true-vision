@@ -1,10 +1,5 @@
 <template>
-  <v-footer
-    color="grey darken-4"
-    padless
-    dark
-    class="pb-3 pt-12 ṕx-2 text-body-1"
-  >
+  <v-footer color="grey darken-4" padless dark class="py-6 px-2 text-body-1">
     <v-container fluid>
       <v-row justify="center">
         <v-col cols="6" md="4">
@@ -34,19 +29,15 @@
               v-for="(link, index) in links"
               :key="`footer-main-links-${index}`"
             >
-              <v-btn
-                :ripple="false"
-                color="white"
-                text
-                class="text-body-1 mb-1"
-                >{{ link.title }}</v-btn
-              >
+              <v-btn color="white" text class="text-body-1 mb-1">{{
+                link.title
+              }}</v-btn>
             </li>
           </ul>
         </v-col>
       </v-row>
+      <v-divider inset class="my-5" />
     </v-container>
-
     <v-row align="center" class="footer-bootom">
       <v-col cols="6" md="8">
         <div>
@@ -59,11 +50,13 @@
           v-for="(link, index) in socialLinks"
           :to="link.to"
           :key="`footer-main-social-links-${index}`"
+          color="white"
           fab
           depressed
+          small
           class="mx-2"
         >
-          <v-icon dark>mdi-{{ link.icon }}</v-icon>
+          <v-icon color="black">mdi-{{ link.icon }}</v-icon>
         </v-btn>
       </v-col>
     </v-row>

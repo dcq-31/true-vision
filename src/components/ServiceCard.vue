@@ -31,9 +31,7 @@
       </v-card-text>
 
       <v-card-actions>
-        <v-btn color="teal accent-4" text @click="reveal = true">
-          Leer Más
-        </v-btn>
+        <v-btn color="secondary" text @click="reveal = true"> Leer Más </v-btn>
       </v-card-actions>
 
       <v-expand-transition>
@@ -49,7 +47,7 @@
             </p>
           </v-card-text>
           <v-card-actions class="pt-0">
-            <v-btn color="teal accent-4" text @click="reveal = false">
+            <v-btn color="secondary" text @click="reveal = false">
               Cerrar
             </v-btn>
           </v-card-actions>
