@@ -1,5 +1,5 @@
 export const ROUTES = {
   HOME: 'home',
   LOGIN: 'login',
-  PATIENT_LIST: 'patient.list'
+  SPECIALIST__PATIENT_LIST: 'specialist.patient-list'
 }
